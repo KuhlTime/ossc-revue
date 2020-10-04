@@ -3,7 +3,11 @@
     <table>
       <thead :class="{ shadow: scrolled }">
         <tr>
-          <th v-for="h in headers" :key="h">{{ h }}</th>
+          <th v-for="(h, i) in headers" :key="h" @click="changeOrder(i)" :class="{ 'sort-key': i === sortKey }">
+            {{ h }}
+            <ChevronDownIcon v-if="sortKey === i" size="0.8x" class="sort-icon" :class="{ up: !ascending }" />
+            <div class="icon-placeholder" v-if="sortKey !== i" />
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -16,8 +20,11 @@
 </template>
 
 <script>
+import { ChevronDownIcon } from 'vue-feather-icons'
+
 export default {
   name: 'data-table',
+  components: { ChevronDownIcon },
   props: {
     headers: {
       type: Array,
@@ -42,12 +49,21 @@ export default {
   },
   data: () => {
     return {
-      search: '',
-      searching: false,
-      scrollY: 0
+      scrollY: 0,
+      sortKey: 0,
+      ascending: true // ascending = 1 -> 100 - descending = 100 -> 1
     }
   },
-  methods: {},
+  methods: {
+    changeOrder(index) {
+      if (this.sortKey == index) {
+        this.ascending = !this.ascending
+      } else {
+        this.sortKey = index
+        this.ascending = true
+      }
+    }
+  },
   computed: {
     scrolled() {
       return this.scrollY !== 0
@@ -122,9 +138,20 @@ td {
 }
 
 th {
+  position: relative;
   white-space: nowrap;
   padding-top: 12px;
   padding-bottom: 12px;
+  cursor: pointer;
+  user-select: none;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all ease-in-out 160ms;
+  font-weight: 500;
+}
+
+th.sort-key {
+  color: #fff;
+  font-weight: 600;
 }
 
 td {
@@ -141,6 +168,23 @@ td:first-child {
 th:last-child,
 td:last-child {
   padding-right: 20px;
+}
+
+.sort-icon {
+  width: 12px;
+  height: 12px;
+  transition: all ease-in-out 300ms;
+  transform: rotate(360deg);
+}
+
+.icon-placeholder {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+}
+
+.up {
+  transform: rotate(180deg);
 }
 
 .no-scrollbar {

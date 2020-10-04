@@ -32,9 +32,9 @@ export default {
   height: 60px;
   color: #fff;
   background-color: $blue;
-  border-bottom: 1px solid #5ca8ff;
   overflow: hidden;
   overflow-x: scroll;
+  border-bottom: 1px solid #5ca8ff;
 }
 
 .default-slot {
