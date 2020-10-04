@@ -14,8 +14,16 @@
       >
     </div>
     <div id="right">
-      <CodeIcon class="icon" @click="$router.push({ name: 'docs' })" v-if="$route.name === 'home'"></CodeIcon>
-      <InfoIcon class="icon" @click="$router.push({ name: 'info' })" v-if="$route.name === 'home'" />
+      <CodeIcon
+        class="icon"
+        @click="$router.push({ name: 'docs' })"
+        v-if="$route.name === 'home'"
+      ></CodeIcon>
+      <InfoIcon
+        class="icon"
+        @click="$router.push({ name: 'info' })"
+        v-if="$route.name === 'home'"
+      />
       <a class="user" href="https://kuhlti.me">
         Developed by
         <p>André Kuhlmann</p>

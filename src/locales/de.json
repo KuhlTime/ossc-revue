@@ -12,6 +12,10 @@
         "semester": "Semester",
         "title": "Notenspiegel"
       }
+    },
+    "login": {
+      "username": "Nutzername",
+      "password": "Passwort"
     }
   }
 }

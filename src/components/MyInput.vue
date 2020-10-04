@@ -1,6 +1,6 @@
 <template>
   <input
-    type="text"
+    :type="type"
     v-model="value"
     :placeholder="placeholder"
     :required="required"
@@ -32,7 +32,9 @@ export default {
 
 <style lang="scss" scoped>
 input {
+  display: block;
   border-radius: 4px;
+  width: 100%;
   border: 1px solid transparent;
   color: #fff;
   font-size: 15px;

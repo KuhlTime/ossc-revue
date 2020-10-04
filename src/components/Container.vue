@@ -28,6 +28,9 @@ export default {
 
 <style lang="postcss" scoped>
 .container {
+  /* Position*/
+  position: relative;
+
   /* Display */
   width: 100%;
   box-sizing: border-box;

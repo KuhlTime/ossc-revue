@@ -44,6 +44,10 @@ export default {
     rows: {
       type: Array,
       required: true
+    },
+    search: {
+      type: String,
+      default: ''
     }
   },
   data: () => {

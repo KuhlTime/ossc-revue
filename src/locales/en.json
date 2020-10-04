@@ -12,6 +12,10 @@
         "semester": "Semester",
         "title": "Table of Grades"
       }
+    },
+    "login": {
+      "password": "Password",
+      "username": "Username"
     }
   }
 }
