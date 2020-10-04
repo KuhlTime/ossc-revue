@@ -1,7 +1,9 @@
 <template>
   <div class="box">
-    <div class="box-header"></div>
-    <div class="slot">
+    <div class="box-header">
+      <slot name="header" />
+    </div>
+    <div class="default-slot">
       <slot />
     </div>
   </div>
@@ -28,12 +30,14 @@ export default {
 
 .box-header {
   height: 60px;
-  color: #000;
+  color: #fff;
   background-color: $blue;
   border-bottom: 1px solid #5ca8ff;
+  overflow: hidden;
+  overflow-x: scroll;
 }
 
-.slot {
+.default-slot {
   overflow: hidden;
   height: 100%;
 }
