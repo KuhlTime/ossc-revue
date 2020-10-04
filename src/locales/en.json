@@ -1,4 +1,17 @@
 {
   "search": "Search",
-  "gradesTable": "Table of Grades"
+  "views": {
+    "home": {
+      "table": {
+        "creditPoints": "Credit Points",
+        "examinationDate": "Date",
+        "grade": "Grade",
+        "id": "ID",
+        "name": "Name",
+        "passed": "Passed",
+        "semester": "Semester",
+        "title": "Table of Grades"
+      }
+    }
+  }
 }

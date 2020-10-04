@@ -16,7 +16,7 @@
           </div>
         </div>
       </template>
-      <DataTable></DataTable>
+      <DataTable :headers="headers" :rows="rows" />
     </Box>
   </Container>
 </template>
@@ -27,7 +27,7 @@ import Box from '@/components/Box'
 import DataTable from '@/components/DataTable'
 import MyInput from '@/components/MyInput'
 
-import emptyIcon from '@/assets/icons/empty.svg'
+// import emptyIcon from '@/assets/icons/empty.svg'
 
 // import exampleData from '@/tmp/sampleData.json'
 
@@ -42,18 +42,28 @@ export default {
   data: () => {
     return {
       exams: [],
-      search: '',
-      emptyIcon: emptyIcon,
-      emptyText: 'Noch keine Favoriten'
+      search: ''
     }
   },
   created() {},
   computed: {
     tableTitleString() {
-      return this.$t('gradesTable')
+      return this.$t('views.home.table.title')
     },
     searchPlaceholder() {
       return this.$t('search') + ' ...'
+    },
+    headers() {
+      return [this.$t('views.home.table.id'), this.$t('views.home.table.name')]
+    },
+    rows() {
+      return [
+        ['1', 'Mathe 1'],
+        ['2', 'Mathe 2'],
+        ['3', 'Mathe 3'],
+        ['4', 'Mathe 4'],
+        ['5', 'Advanced Machine Learning']
+      ]
     }
   }
 }

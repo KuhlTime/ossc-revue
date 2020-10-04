@@ -3,16 +3,26 @@
     <table>
       <thead :class="{ shadow: scrolled }">
         <tr>
-          <th v-for="(h, i) in headers" :key="h" @click="changeOrder(i)" :class="{ 'sort-key': i === sortKey }">
+          <th
+            v-for="(h, i) in headers"
+            :key="h"
+            @click="changeOrder(i)"
+            :class="{ 'sort-key': i === sortKey }"
+          >
             {{ h }}
-            <ChevronDownIcon v-if="sortKey === i" size="0.8x" class="sort-icon" :class="{ up: !ascending }" />
+            <ChevronDownIcon
+              v-if="sortKey === i"
+              size="0.8x"
+              class="sort-icon"
+              :class="{ up: !ascending }"
+            />
             <div class="icon-placeholder" v-if="sortKey !== i" />
           </th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="r in rows" :key="r">
-          <td v-for="h in headers" :key="h">{{ r }}.{{ h }}</td>
+        <tr v-for="r in sortedRows" :key="r">
+          <td v-for="(h, i) in headers" :key="h">{{ r[i] }}</td>
         </tr>
       </tbody>
     </table>
@@ -20,6 +30,7 @@
 </template>
 
 <script>
+// TODO: Generate UUIDs
 import { ChevronDownIcon } from 'vue-feather-icons'
 
 export default {
@@ -28,23 +39,11 @@ export default {
   props: {
     headers: {
       type: Array,
-      default: () => {
-        return Array(50)
-          .fill()
-          .map((_, h) => {
-            return String(h + 1)
-          })
-      }
+      required: true
     },
     rows: {
       type: Array,
-      default: () => {
-        return Array(100)
-          .fill()
-          .map((_, h) => {
-            return String(h + 1)
-          })
-      }
+      required: true
     }
   },
   data: () => {
@@ -67,6 +66,13 @@ export default {
   computed: {
     scrolled() {
       return this.scrollY !== 0
+    },
+    sortedRows() {
+      const i = this.sortKey
+
+      return [...this.rows].sort((a, b) => {
+        return this.ascending ? a[i] > b[i] : a[i] < b[i]
+      })
     }
   },
   mounted() {

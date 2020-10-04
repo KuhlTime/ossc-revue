@@ -1,4 +1,17 @@
 {
   "search": "Suche",
-  "gradesTable": "Notenspiegel"
+  "views": {
+    "home": {
+      "table": {
+        "creditPoints": "Credit Points",
+        "examinationDate": "Prüfungsdatum",
+        "grade": "Note",
+        "id": "ID",
+        "name": "Name",
+        "passed": "Bestanden",
+        "semester": "Semester",
+        "title": "Notenspiegel"
+      }
+    }
+  }
 }
