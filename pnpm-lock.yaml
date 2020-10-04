@@ -1,8 +1,13 @@
 dependencies:
   core-js: 3.6.5
+  dayjs: 1.9.1
+  normalize.css: 8.0.1
+  snarkdown: 2.0.0
   vue: 2.6.12
+  vue-feather-icons: 5.1.0
   vue-router: 3.4.5
 devDependencies:
+  '@types/webpack-env': 1.15.3
   '@vue/cli-plugin-babel': 4.5.6_158dd777044bae538fee5b12e0b3d5c2
   '@vue/cli-plugin-eslint': 4.5.6_667f482cc199ab3b44a87c7a57da4444
   '@vue/cli-plugin-router': 4.5.6_@vue+cli-service@4.5.6
@@ -1233,6 +1238,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-3+86AgSzl18n5P1iUP9/lz3G3GMztCp+wxdDvVuNhx1sr1jE79GpYfKHL8k+Vht3N74K2n98CuAEw4YPJCYtDA==
+  /@types/webpack-env/1.15.3:
+    dev: true
+    resolution:
+      integrity: sha512-5oiXqR7kwDGZ6+gmzIO2lTC+QsriNuQXZDWNYRV3l2XRN/zmPgnC21DLSx2D05zvD8vnXW6qUg7JnXZ4I6qLVQ==
   /@types/webpack-sources/2.0.0:
     dependencies:
       '@types/node': 14.11.2
@@ -2092,6 +2101,10 @@ packages:
       eslint: '>= 4.12.1'
     resolution:
       integrity: sha512-ifWaTHQ0ce+448CYop8AdrQiBsGrnC+bMgfyKFdi6EsPLTAWG+QfyDeM6OH+FmWnKvEq5NnBMLvlBUPKQZoDSg==
+  /babel-helper-vue-jsx-merge-props/2.0.3:
+    dev: false
+    resolution:
+      integrity: sha512-gsLiKK7Qrb7zYJNgiXKpXblxbV5ffSwR0f5whkPAaBAR4fhi6bwRZxX9wBlIc5M/v8CCkXUbXZL4N/nSE97cqg==
   /babel-loader/8.1.0_d2a654c8b7ff226093b38eb7b56a78a8:
     dependencies:
       '@babel/core': 7.11.6
@@ -3304,6 +3317,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-hBSVCvSmWC+QypYObzwGOd9wqdDpOt+0wl0KbU+R+uuZBS1jN8VsD1ss3irQDknRj5NvxiTF6oj/nDRnN/UQNw==
+  /dayjs/1.9.1:
+    dev: false
+    resolution:
+      integrity: sha512-01NCTBg8cuMJG1OQc6PR7T66+AFYiPwgDvdJmvJBn29NGzIG+DIFxPLNjHzwz3cpFIvG+NcwIjP9hSaPVoOaDg==
   /de-indent/1.0.2:
     dev: true
     resolution:
@@ -6622,6 +6639,10 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-U+JJi7duF1o+u2pynbp2zXDW2/PADgC30f0GsHZtRh+HOcXHnw137TrNlyxxRvWW5fjKd3bcLHPxofWuCjaeZg==
+  /normalize.css/8.0.1:
+    dev: false
+    resolution:
+      integrity: sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==
   /npm-run-path/2.0.2:
     dependencies:
       path-key: 2.0.1
@@ -8462,6 +8483,10 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-FtyOnWN/wCHTVXOMwvSv26d+ko5vWlIDD6zoUJ7LW8vh+ZBC8QdljveRP+crNrtBwioEUWy/4dMtbBjA4ioNlg==
+  /snarkdown/2.0.0:
+    dev: false
+    resolution:
+      integrity: sha512-MgL/7k/AZdXCTJiNgrO7chgDqaB9FGM/1Tvlcenenb7div6obaDATzs16JhFyHHBGodHT3B7RzRc5qk8pFhg3A==
   /sockjs-client/1.4.0:
     dependencies:
       debug: 3.2.6
@@ -9456,6 +9481,12 @@ packages:
       eslint: '>=5.0.0'
     resolution:
       integrity: sha512-Kr21uPfthDc63nDl27AGQEhtt9VrZ9nkYk/NTftJ2ws9XiJwzJJCnCr3AITQ2jpRMA0XPGDECxYH8E027qMK9Q==
+  /vue-feather-icons/5.1.0:
+    dependencies:
+      babel-helper-vue-jsx-merge-props: 2.0.3
+    dev: false
+    resolution:
+      integrity: sha512-ZyM2yFGmL9DYLZYHm63KV1zCQOj8czC2LzDSkxoIp9o6zMAOY4yv1FkxbX+XNUwcH3RRrAuvf25Ij7CnUUsQVA==
   /vue-hot-reload-api/2.3.4:
     dev: true
     resolution:
@@ -9898,6 +9929,7 @@ packages:
     resolution:
       integrity: sha512-jcKpkthap6x63MB4TxwCyuIGkV0oYP/YRyuQU5UO0Yz/E/ZAu+653/uov+phdmO54n6BcvFRyyt0RRrWdN2mpw==
 specifiers:
+  '@types/webpack-env': ^1.15.3
   '@vue/cli-plugin-babel': ~4.5.0
   '@vue/cli-plugin-eslint': ~4.5.0
   '@vue/cli-plugin-router': ~4.5.0
@@ -9905,13 +9937,17 @@ specifiers:
   '@vue/eslint-config-prettier': ^6.0.0
   babel-eslint: ^10.1.0
   core-js: ^3.6.5
+  dayjs: ^1.9.1
   eslint: ^6.7.2
   eslint-plugin-prettier: ^3.1.3
   eslint-plugin-vue: ^6.2.2
   lint-staged: ^9.5.0
   node-sass: ^4.12.0
+  normalize.css: ^8.0.1
   prettier: ^1.19.1
   sass-loader: ^8.0.2
+  snarkdown: ^2.0.0
   vue: ^2.6.11
+  vue-feather-icons: ^5.1.0
   vue-router: ^3.2.0
   vue-template-compiler: ^2.6.11

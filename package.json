@@ -9,10 +9,15 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "dayjs": "^1.9.1",
+    "normalize.css": "^8.0.1",
+    "snarkdown": "^2.0.0",
     "vue": "^2.6.11",
+    "vue-feather-icons": "^5.1.0",
     "vue-router": "^3.2.0"
   },
   "devDependencies": {
+    "@types/webpack-env": "^1.15.3",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",

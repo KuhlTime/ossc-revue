@@ -1,32 +1,87 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div id="app" class="vbox">
+    <NavigationHeader
+      :logo="logo"
+      :version="version"
+      :title-bold="$route.meta.title.bold"
+      :title-thin="$route.meta.title.thin"
+    />
+    <router-view />
   </div>
 </template>
 
+<script>
+import NavigationHeader from '@/components/NavigationHeader'
+import logo from '@/assets/logo.svg'
+
+export default {
+  name: 'App',
+  components: { NavigationHeader },
+  data: () => {
+    return {
+      version: '2.0',
+      logo: logo
+    }
+  }
+}
+</script>
+
 <style lang="scss">
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #232d42;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  /* Position */
+  position: absolute;
+  top: 0;
+
+  /* Display */
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* Prevents the website from slideing arround. In case there is some unwanted overflow */
+
+  /* Text */
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+
+  /* Style */
+  color: #fff;
+  background: linear-gradient(180deg, #232d42 0%, #0b1324 100%);
 }
 
-#nav {
-  padding: 30px;
+.vbox {
+  display: flex;
+  flex-direction: column;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+.hbox {
+  /* Display */
+  display: flex;
+  flex-direction: row;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.uppercase {
+  /* Text */
+  text-transform: uppercase;
+}
+
+.lowercase {
+  /* Text */
+  text-transform: lowercase;
+}
+
+.content {
+  /* Position */
+  margin-top: 60px;
+
+  /* Display */
+  overflow: scroll;
 }
 </style>
