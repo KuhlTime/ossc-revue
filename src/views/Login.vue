@@ -1,10 +1,6 @@
 <template>
   <container center max-width="400px" width="80%">
-    <form
-      class="login-card"
-      :class="{ invalid: isInvalid, loading: isLoading }"
-      @submit="preventDefault"
-    >
+    <form class="login-card" :class="{ invalid: isInvalid, loading: isLoading }" @submit="submit">
       <h2>OSSC<span class="thin">Revue</span></h2>
       <p class="margin-bottom">Loge dich mit deinem HSD Account ein.</p>
       <MyInput
@@ -30,7 +26,9 @@
           <a class="dark" href="#" @click="$router.push({ name: 'terms' })">terms and conditions</a>
         </span>
       </div>
-      <MyButton :disabled="isLoading || isFormInalid">Login</MyButton>
+      <MyButton @click="login" :disabled="isLoading || isFormInalid"
+        ><span v-if="isLoading">Loading...</span><span v-if="!isLoading">Login</span></MyButton
+      >
     </form>
     <footer>
       <AlertCircleIcon class="icon" />
@@ -72,14 +70,23 @@ export default {
     },
     isInvalid() {
       return false
+    },
+    user() {
+      return { username: this.username, password: this.password }
     }
   },
   methods: {
     login() {
+      if (this.isFormInalid) return
+
       this.isLoading = true
+      this.$store.dispatch('login', this.user).then(() => {
+        this.$router.push({ name: 'home' })
+      })
     },
-    preventDefault(event) {
+    submit(event) {
       event.preventDefault()
+      this.login()
     }
   }
 }
