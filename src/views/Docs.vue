@@ -14,10 +14,7 @@ export default {
   data: () => {
     return {
       text:
-        'Die API welche ich für diese Webseite entwickelt habe ist öffentlich nutzbar. Wenn ihr also gerne eure eigene Anwendung erstellen möchtet könnt ihr gerne auf diese API zurückgreifen. Wie ihr diese API nutzen könnt ist auf dieser Seite beschreiben.<br><br>\n' +
-        '## Prüfungsliste\n' +
-        '`http://server-addresse/exams`\n' +
-        '<br><br>Dies gibt einen JSON Array mit allen verfügbaren Prüfungen zurück.'
+        'Die API welche ich für diese Webseite entwickelt habe ist öffentlich nutzbar. Wenn ihr also gerne eure eigene Anwendung erstellen möchtet könnt ihr gerne auf diese API zurückgreifen.<br><br>Wenn Ihr ebenfalls einen Zugang haben möchtet könnt ihr mich unter andre.kuhlmann@study.hs-duesseldorf.de anschrieben.<br><br>\n'
     }
   }
 }
