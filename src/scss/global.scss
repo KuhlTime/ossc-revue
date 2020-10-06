@@ -8,3 +8,7 @@ a {
 a:hover {
   color: #fff;
 }
+
+a:hover.dark {
+  color: rgba(0, 0, 0, 0.5);
+}

@@ -1,25 +1,36 @@
 <template>
-  <container class="center" max-width="400px" width="80%" center>
-    <form class="login-card" :class="{ invalid: isInvalid }">
+  <container center max-width="400px" width="80%">
+    <form
+      class="login-card"
+      :class="{ invalid: isInvalid, loading: isLoading }"
+      @submit="preventDefault"
+    >
       <h2>OSSC<span class="thin">Revue</span></h2>
       <p class="margin-bottom">Loge dich mit deinem HSD Account ein.</p>
       <MyInput
         class="input"
         v-model="username"
         type="text"
+        focusColor="#000"
         :placeholder="usernamePlaceholderString"
+        :disabled="isLoading"
       />
       <MyInput
         class="input"
         v-model="password"
         type="password"
+        focusColor="#000"
         :placeholder="passwordPlaceholderString"
+        :disabled="isLoading"
       />
       <div class="terms">
-        <Checkbox v-model="acceptTerms" class="terms-checkbox" />
-        I agree to the terms and conditions
+        <Checkbox v-model="acceptTerms" :disabled="isLoading" class="terms-checkbox" />
+        <span>
+          I agree to the
+          <a class="dark" href="#" @click="$router.push({ name: 'terms' })">terms and conditions</a>
+        </span>
       </div>
-      <MyButton>Login</MyButton>
+      <MyButton :disabled="isLoading || isFormInalid">Login</MyButton>
     </form>
     <footer>
       <AlertCircleIcon class="icon" />
@@ -45,7 +56,8 @@ export default {
     return {
       username: '',
       password: '',
-      acceptTerms: false
+      acceptTerms: false,
+      isLoading: false
     }
   },
   computed: {
@@ -55,8 +67,19 @@ export default {
     passwordPlaceholderString() {
       return this.$t('views.login.password')
     },
+    isFormInalid() {
+      return this.username == '' || this.password == '' || this.acceptTerms == false
+    },
     isInvalid() {
       return false
+    }
+  },
+  methods: {
+    login() {
+      this.isLoading = true
+    },
+    preventDefault(event) {
+      event.preventDefault()
     }
   }
 }
@@ -64,6 +87,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/scss/main';
+@import '@/scss/transitions/fade';
 
 .center {
   position: absolute;
@@ -72,12 +96,16 @@ export default {
   transform: translate(-50%, -50%);
 }
 
+.hcenter {
+  margin: 0 auto;
+}
+
 .login-card {
   padding: 24px 42px;
   background-color: #fff;
   border-radius: 12px;
   color: #000;
-  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);
 }
 
 .invalid {
@@ -91,6 +119,7 @@ export default {
 
 h2 {
   margin: 0;
+  color: $red;
 }
 
 .margin-bottom {

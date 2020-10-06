@@ -1,10 +1,16 @@
 <template>
-  <button><slot /></button>
+  <button :disabled="disabled"><slot /></button>
 </template>
 
 <script>
 export default {
-  name: 'my-button'
+  name: 'my-button',
+  props: {
+    disabled: {
+      type: Boolean,
+      default: false
+    }
+  }
 }
 </script>
 
@@ -33,5 +39,9 @@ button:hover {
 
 button:active {
   background-color: darken($red, 10%);
+}
+
+button:disabled {
+  background-color: rgba(0, 0, 0, 0.6);
 }
 </style>

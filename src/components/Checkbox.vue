@@ -1,6 +1,11 @@
 <template>
-  <label class="checkbox" :class="{ active: value }">
-    <input type="checkbox" v-model="value" v-on:input="$emit('input', $event.target.checked)" />
+  <label class="checkbox" :class="{ active: value, disabled }">
+    <input
+      type="checkbox"
+      :disabled="disabled"
+      v-model="value"
+      v-on:input="$emit('input', $event.target.checked)"
+    />
     <img :src="checkmark" class="checkmark" v-if="value" />
   </label>
 </template>
@@ -16,6 +21,10 @@ export default {
   props: {
     value: {
       type: Boolean
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
   data: () => {
@@ -41,7 +50,7 @@ input[type='checkbox'] {
   height: 15px;
 
   /* Style */
-  background-color: #e8eaee;
+  background-color: rgba(0, 0, 0, 0.1);
   border-radius: 4px;
 
   /* Animation */
@@ -50,6 +59,10 @@ input[type='checkbox'] {
   /* Interactive */
   user-select: none;
   cursor: pointer;
+}
+
+.disabled {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .active {
