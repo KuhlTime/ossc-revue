@@ -7,6 +7,6 @@ export default {
       bold: 'Terms',
       thin: '&Conditions'
     },
-    back: 'login'
+    back: 'home'
   }
 }

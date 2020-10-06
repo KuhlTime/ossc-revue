@@ -17,12 +17,12 @@
       <CodeIcon
         class="icon"
         @click="$router.push({ name: 'docs' })"
-        v-if="$route.name === 'home'"
+        v-if="$route.name === 'home' || $route.name === 'login'"
       ></CodeIcon>
       <InfoIcon
         class="icon"
         @click="$router.push({ name: 'info' })"
-        v-if="$route.name === 'home'"
+        v-if="$route.name === 'home' || $route.name === 'login'"
       />
       <a class="user" href="https://kuhlti.me">
         Developed by
