@@ -18,6 +18,28 @@ const store = new Vuex.Store({
   getters: {
     isAuthorized(state) {
       return state.moduleExtractResponse !== undefined
+    },
+    moduleExtractResponseData(state) {
+      return state.moduleExtractResponse.data
+    },
+    modules(state, getters) {
+      return getters.moduleExtractResponseData.modules
+    },
+    student(state, getters) {
+      return getters.moduleExtractResponseData.student
+    },
+    passedModules(state, getters) {
+      return getters.modules.filter(module => module.exams.find(ex => ex.passed))
+    },
+    passedExams(state, getters) {
+      return getters.passedModules.map(module => module.exams[0])
+    },
+    averageGrade(state, getters) {
+      const sum = getters.passedExams.reduce((a, b) => a + b.grade, 0)
+      return sum / getters.passedExams.length
+    },
+    totalCreditPoints(state, getters) {
+      return getters.passedModules.reduce((a, b) => a + b.creditPoints, 0)
     }
   },
   actions: {

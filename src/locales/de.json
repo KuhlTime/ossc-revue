@@ -3,19 +3,22 @@
   "views": {
     "home": {
       "table": {
-        "creditPoints": "Credit Points",
+        "attempts": "Versuche",
+        "creditPoints": "CP",
         "examinationDate": "Prüfungsdatum",
         "grade": "Note",
         "id": "ID",
         "name": "Name",
         "passed": "Bestanden",
+        "passedFalse": "Nicht Bestanden",
+        "passedTrue": "Bestanden",
         "semester": "Semester",
         "title": "Notenspiegel"
       }
     },
     "login": {
-      "username": "Nutzername",
-      "password": "Passwort"
+      "password": "Passwort",
+      "username": "Nutzername"
     }
   }
 }

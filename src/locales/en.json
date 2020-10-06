@@ -3,12 +3,15 @@
   "views": {
     "home": {
       "table": {
-        "creditPoints": "Credit Points",
+        "attempts": "Attempts",
+        "creditPoints": "CP",
         "examinationDate": "Date",
         "grade": "Grade",
         "id": "ID",
         "name": "Name",
         "passed": "Passed",
+        "passedFalse": "Failed",
+        "passedTrue": "Passed",
         "semester": "Semester",
         "title": "Table of Grades"
       }

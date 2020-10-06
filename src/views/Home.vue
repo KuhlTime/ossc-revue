@@ -1,10 +1,12 @@
 <template>
-  <Container id="home" class="content" width="95%" max-width="900px" center full-height>
+  <Container id="home" class="content" width="95%" max-width="1000px" center full-height>
     <Box>
       <template v-slot:header>
         <div class="toolbar">
           <div class="left">
-            <p class="toolbar-title">{{ tableTitleString }}</p>
+            <span class="toolbar-title">{{ tableTitleString }}</span>
+            <span>Ø {{ avgGradeString }}</span>
+            <span>CP: {{ totalCPString }}</span>
           </div>
           <div class="right">
             <MyInput
@@ -26,6 +28,8 @@ import Container from '@/components/Container'
 import Box from '@/components/Box'
 import DataTable from '@/components/DataTable'
 import MyInput from '@/components/MyInput'
+
+import dayjs from 'dayjs'
 
 // import emptyIcon from '@/assets/icons/empty.svg'
 
@@ -54,16 +58,42 @@ export default {
       return this.$t('search') + ' ...'
     },
     headers() {
-      return [this.$t('views.home.table.id'), this.$t('views.home.table.name')]
+      return [
+        this.$t('views.home.table.id'),
+        this.$t('views.home.table.name'),
+        this.$t('views.home.table.passed'),
+        this.$t('views.home.table.grade'),
+        this.$t('views.home.table.creditPoints'),
+        this.$t('views.home.table.attempts'),
+        this.$t('views.home.table.examinationDate')
+      ]
     },
     rows() {
-      return [
-        ['1', 'Mathe 1'],
-        ['2', 'Mathe 2'],
-        ['3', 'Mathe 3'],
-        ['4', 'Mathe 4'],
-        ['5', 'Advanced Machine Learning']
-      ]
+      return this.$store.getters.modules.map(module => {
+        const passedExam = module.exams.find(exam => exam.grade)
+        const grade = passedExam?.grade ? String(parseFloat(passedExam?.grade).toFixed(1)) : '-'
+        const examinationDate = dayjs(passedExam?.examinationDate).format('DD.MM.YYYY')
+
+        const attempts = module.exams.length
+
+        return [
+          module.id,
+          module.name,
+          module.passed
+            ? this.$t('views.home.table.passedTrue')
+            : this.$t('views.home.table.passedFalse'),
+          grade,
+          module.creditPoints,
+          attempts,
+          examinationDate
+        ]
+      })
+    },
+    avgGradeString() {
+      return String(this.$store.getters.averageGrade.toFixed(1))
+    },
+    totalCPString() {
+      return String(this.$store.getters.totalCreditPoints)
     }
   }
 }
@@ -83,6 +113,11 @@ export default {
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
+}
+
+.left *:not(:first-of-type),
+.right *:not(:first-of-type) {
+  margin-left: 12px;
 }
 
 .toolbar-title {

@@ -145,11 +145,11 @@ tbody tr:nth-child(even) {
 th,
 td {
   padding: 10px 14px;
+  white-space: nowrap;
 }
 
 th {
   position: relative;
-  white-space: nowrap;
   padding-top: 12px;
   padding-bottom: 12px;
   cursor: pointer;
