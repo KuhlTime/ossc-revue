@@ -10,6 +10,7 @@
           </div>
           <div class="right">
             <MyInput
+              style="display: none"
               v-model="search"
               type="search"
               name="search"
