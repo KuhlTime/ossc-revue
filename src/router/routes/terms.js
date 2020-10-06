@@ -6,6 +6,7 @@ export default {
     title: {
       bold: 'Terms',
       thin: '&Conditions'
-    }
+    },
+    back: 'login'
   }
 }
