@@ -16,7 +16,7 @@ export default {
   data: () => {
     return {
       markdown:
-        '### Vorweg es handelt sich hier nicht um die offizielle Seite des HSD Prüfungsamt.<br><br>Dies ist lediglich ein Hobbyprojekt mit welchem die Noten eines Studenten in schöner Form aufgelistet werden sollen. Ich übernehme keinerlei Verantwortung beim Verlust Ihrer Anmeldedaten oder sonst welcher Probleme die durch das verwenden dieser Software auftretenden können. Bitte achten Sie darauf, dass Sie stehts auf einer gesicherten Verbindung mit dem Server kommunizieren.<br><br>Wenn Sie sich unsicher sind empfehle ich Ihnen auf die offizielle Webseite der HSD unter [https://ossc.hs-duesseldorf.de](https://ossc.hs-duesseldorf.de) Ihre Noten abzufragen.'
+        '### Vorweg es handelt sich hier nicht um die offizielle Seite des HSD Prüfungsamt.<br><br>Dies ist lediglich ein Hobbyprojekt mit welchem die Noten eines Studenten in schöner Form aufgelistet werden sollen. Ich übernehme keinerlei Verantwortung beim Verlust Ihrer Anmeldedaten oder sonst welcher Probleme die durch das verwenden dieser Software auftretenden können. Bitte achten Sie darauf, dass Sie stehts auf einer gesicherten Verbindung mit dem Server kommunizieren.<br><br>Wenn Sie sich unsicher sind empfehle ich Ihnen auf die offizielle Webseite der HSD unter [https://ossc.hs-duesseldorf.de](https://ossc.hs-duesseldorf.de) Ihre Noten abzufragen.<br><br>Das abfragen Ihrer Noten setzt das übermitteln Ihrer Zugangsdaten vorraus. Diese sowie Benutzerbezogene Daten werden zu keinem Zeitpunkt auf dem Server gespeichert oder hinterlegt.'
     }
   }
 }
