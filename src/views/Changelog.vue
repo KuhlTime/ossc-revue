@@ -25,20 +25,12 @@ export default {
     return {
       changes: [
         {
-          date: dayjs(),
-          version: '2.0',
+          date: dayjs('06/10/2020'),
+          version: '0.1.0',
           icon: changelogIcons.NewIcon,
-          title: 'Neues Design',
+          title: 'Hallo Welt 👋',
           description:
-            'Mit diesem Update erhält der PrüfungsPlanner ein komplett übeholtes Design. Zudem kommt ein modernes Web Framework (VueJS) zum Einsatz was es mir ermöglicht hat, die Anwendung deutlich modularer Aufzubauen.'
-        },
-        {
-          date: dayjs('08/02/2019'),
-          version: '1.0',
-          icon: changelogIcons.NewIcon,
-          title: 'Der Anfang',
-          description:
-            'Ein erster Prototyp des PrüfungsPlanner, geschrieben in Vanilla Javascript auf [JSFiddle](https://jsfiddle.net/KuhlTime/dfnpoy96/).'
+            'Der erste Prototype für meinen OSSC Redesign ist fertig. Nutzer können sich einfach einloggen und sehen sofort ihre Noten.<br><br>Neben der graphischen Oberfläche habe ich im Hintergrund auch ein eigenes Backend programmiert.<br><br>Wenn jemand interesse daran hat und gerne selber auf die API zugreifen möchte dann schreibt mich gerne unter meiner Hochschul-Adresse an andre.kuhlmann@study-hs-duesseldorf.de.'
         }
       ]
     }
