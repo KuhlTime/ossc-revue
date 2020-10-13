@@ -48,7 +48,7 @@ body {
   overflow: hidden; /* Prevents the website from slideing arround. In case there is some unwanted overflow */
 
   /* Text */
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', 'Lato', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
