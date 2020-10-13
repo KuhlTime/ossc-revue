@@ -8,6 +8,7 @@ dependencies:
   vue-feather-icons: 5.1.0
   vue-i18n: 8.21.1
   vue-router: 3.4.5
+  vue-screen: 1.4.4
   vuex: 3.5.1_vue@2.6.12
 devDependencies:
   '@intlify/vue-i18n-loader': 1.0.0
@@ -9624,6 +9625,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-ioRY5QyDpXM9TDjOX6hX79gtaMXSVDDzSlbIlyAmbHNteIL81WIVB2e+jbzV23vzxtoV0krdS2XHm+GxFg+Nxg==
+  /vue-screen/1.4.4:
+    dev: false
+    resolution:
+      integrity: sha512-o5nOnjjknVjfyBmEZTzfVbDm2EJ7rnejsMJSrU11ke3WoN5Reo7ecSyLPSnNatve/GuAsXPDl2nEdaM1X48Lqw==
   /vue-style-loader/4.1.2:
     dependencies:
       hash-sum: 1.0.2
@@ -10057,5 +10062,6 @@ specifiers:
   vue-feather-icons: ^5.1.0
   vue-i18n: ^8.21.1
   vue-router: ^3.2.0
+  vue-screen: ^1.4.4
   vue-template-compiler: ^2.6.11
   vuex: ^3.5.1

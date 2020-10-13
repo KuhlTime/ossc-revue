@@ -1,7 +1,7 @@
 <template>
   <div
     class="container"
-    :style="{ 'max-width': maxWidth, width: width }"
+    :style="{ 'max-width': maxWidth, width: calculatedWidth }"
     :class="{ center: center, 'full-height': fullHeight }"
   >
     <slot />
@@ -21,7 +21,20 @@ export default {
       default: '90%'
     },
     center: Boolean,
-    fullHeight: Boolean
+    fullHeight: Boolean,
+    beakpoint100Percent: {
+      type: Number,
+      value: undefined
+    }
+  },
+  computed: {
+    calculatedWidth: function() {
+      if (this.beakpoint100Percent && this.$screen.width < this.beakpoint100Percent) {
+        return '100%'
+      } else {
+        return this.width
+      }
+    }
   }
 }
 </script>

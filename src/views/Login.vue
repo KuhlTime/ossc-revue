@@ -149,6 +149,7 @@ h2 {
   align-items: center;
   margin-top: 24px;
   margin-bottom: 12px;
+  text-align: left;
 }
 
 .terms-checkbox {
@@ -167,5 +168,6 @@ footer {
 
 footer > .icon {
   height: 24px;
+  margin-right: 6px;
 }
 </style>

@@ -1,13 +1,15 @@
 <template>
-  <label class="checkbox" :class="{ active: value, disabled }">
-    <input
-      type="checkbox"
-      :disabled="disabled"
-      v-model="value"
-      v-on:input="$emit('input', $event.target.checked)"
-    />
-    <img :src="checkmark" class="checkmark" v-if="value" />
-  </label>
+  <div style="width: 15px; height: 15px; position: relative;">
+    <label class="checkbox" :class="{ active: value, disabled }">
+      <input
+        type="checkbox"
+        :disabled="disabled"
+        v-model="value"
+        v-on:input="$emit('input', $event.target.checked)"
+      />
+      <img :src="checkmark" class="checkmark" v-if="value" />
+    </label>
+  </div>
 </template>
 
 <script>

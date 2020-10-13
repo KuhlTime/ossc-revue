@@ -1,5 +1,13 @@
 <template>
-  <Container id="home" class="content" width="95%" max-width="1000px" center full-height>
+  <Container
+    id="home"
+    class="content"
+    width="95%"
+    max-width="1000px"
+    beakpoint100Percent="600"
+    center
+    full-height
+  >
     <Box>
       <template v-slot:header>
         <div class="toolbar">

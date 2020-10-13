@@ -53,7 +53,6 @@ const store = new Vuex.Store({
             const data = res.data
             commit('updateModuleExtractResponse', data)
             console.log('Recieved Data')
-            console.dir(data)
             resolve()
           })
           .catch(err => {
