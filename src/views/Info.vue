@@ -6,7 +6,7 @@
       class="avatar"
     />
     <markdown :value="markdown" />
-    <div id="feedback">
+    <div id="feedback" style="display: none">
       <p class="item">👍</p>
       <p class="item">👎</p>
     </div>
@@ -23,7 +23,7 @@ export default {
   data: () => {
     return {
       markdown:
-        'With 👨‍💻 by **[@KuhlTime](https://twitter.com/KuhlTime)<br><br>Ich habe diesen interaktiven Prüfungsplan bereits 2018 begonnen, da ich es ein wenig mühselig fand die ganze Zeit nach neuen Terminen in dem als PDF bereitgestellten Terminplan herum zu suchen.<br><br>Der Code zu dieser Web Anwendung ist [**Open Source**](https://github.com/KuhlTime/HSDPr-fungsplanner) 👨‍💻und kann gerne weiter verbessert werden.'
+        'With 👨‍💻 by **[@KuhlTime](https://twitter.com/KuhlTime)<br><br> Um mir ein paar klicks zu sparen habe ich mir "kurzerhand" diese Webseite erstellt.<br><br>Sie ermöglicht es dir ohne viele klicks sofort einen Überblick über deine Noten zu erhalten.<br><br>Melde dich ganz einfach mit deinem HSD Account an.<br><br>Auf Anfrage kann ich gerne den Code für die Webseite sowie das Backend auf GitHub hochladen.<br><br>**Viel Spaß beim Zeit sparen.**<br>*André*'
     }
   }
 }
