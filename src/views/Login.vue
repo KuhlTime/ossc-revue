@@ -80,9 +80,15 @@ export default {
       if (this.isFormInalid) return
 
       this.isLoading = true
-      this.$store.dispatch('login', this.user).then(() => {
-        this.$router.push({ name: 'home' })
-      })
+      this.$store
+        .dispatch('login', this.user)
+        .then(() => {
+          this.$router.push({ name: 'home' })
+        })
+        .finally(() => {
+          // If sucessfull or unsuccessfull set isLoading to false
+          this.isLoading = false
+        })
     },
     submit(event) {
       event.preventDefault()
