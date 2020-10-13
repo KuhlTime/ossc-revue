@@ -113,7 +113,7 @@ table {
   /* Text */
   font-family: 'Roboto', 'Avenir', sans-serif;
   text-align: left;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 400;
 }
 
