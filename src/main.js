@@ -3,6 +3,8 @@ import App from './App.vue'
 import router from './router/router'
 import store from '@/store'
 
+import './extensions'
+
 import 'normalize.css'
 import i18n from './i18n'
 

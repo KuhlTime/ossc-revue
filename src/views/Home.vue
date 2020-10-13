@@ -50,6 +50,11 @@ export default {
       search: ''
     }
   },
+  methods: {
+    replaceZeroWithDash(value) {
+      return value === 0 ? '-' : value
+    }
+  },
   created() {},
   computed: {
     tableTitleString() {
@@ -76,8 +81,6 @@ export default {
 
         const grade = module?.grade ? String(parseFloat(module?.grade).toFixed(1)) : '-'
 
-        const attempts = module.exams.length
-
         return [
           module.id,
           module.name,
@@ -86,7 +89,7 @@ export default {
             : this.$t('views.home.table.passedFalse'),
           grade,
           module.creditPoints,
-          attempts,
+          module.attempts.exams.representZeroWithDash(),
           examinationDate
         ]
       })
