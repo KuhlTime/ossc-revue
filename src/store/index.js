@@ -1,14 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
-// import router from '@/router/router'
 
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
     moduleExtractResponse: undefined,
-    loginURL: 'https://ossc.kuhlti.me/'
+    url: 'https://api.kuhlti.me/ossc/modules'
   },
   mutations: {
     updateModuleExtractResponse(state, data) {
@@ -31,15 +30,11 @@ const store = new Vuex.Store({
     passedModules(state, getters) {
       return getters.modules.filter(module => module.exams.find(ex => ex.passed))
     },
-    passedExams(state, getters) {
-      return getters.passedModules.map(module => module.exams[0])
+    averageGrade(state) {
+      return state.moduleExtractResponse.data.avgGrade
     },
-    averageGrade(state, getters) {
-      const sum = getters.passedExams.reduce((a, b) => a + b.grade, 0)
-      return sum / getters.passedExams.length
-    },
-    totalCreditPoints(state, getters) {
-      return getters.passedModules.reduce((a, b) => a + b.creditPoints, 0)
+    totalCreditPoints(state) {
+      return state.moduleExtractResponse.data.totalCreditPoints
     }
   },
   actions: {
@@ -48,18 +43,22 @@ const store = new Vuex.Store({
 
       return new Promise((resolve, reject) => {
         axios
-          .get(state.loginURL, {
+          .get(state.url, {
             auth: {
               username: user.username,
               password: user.password
             }
           })
           .then(res => {
-            commit('updateModuleExtractResponse', res.data)
+            const data = res.data
+            commit('updateModuleExtractResponse', data)
+            console.log('Recieved Data')
+            console.dir(data)
             resolve()
           })
           .catch(err => {
             console.error(err)
+            alert(err.message)
             reject(err)
           })
       })

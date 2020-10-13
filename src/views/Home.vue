@@ -72,8 +72,9 @@ export default {
     rows() {
       return this.$store.getters.modules.map(module => {
         const passedExam = module.exams.find(exam => exam.grade)
-        const grade = passedExam?.grade ? String(parseFloat(passedExam?.grade).toFixed(1)) : '-'
         const examinationDate = dayjs(passedExam?.examinationDate).format('DD.MM.YYYY')
+
+        const grade = module?.grade ? String(parseFloat(module?.grade).toFixed(1)) : '-'
 
         const attempts = module.exams.length
 
@@ -114,6 +115,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
+  font-size: 15px;
 }
 
 .left *:not(:first-of-type),
