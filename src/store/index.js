@@ -7,7 +7,7 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
     moduleExtractResponse: undefined,
-    url: 'https://api.kuhlti.me/ossc/modules'
+    url: 'https://api.kuhlti.me/ossc'
   },
   mutations: {
     updateModuleExtractResponse(state, data) {
