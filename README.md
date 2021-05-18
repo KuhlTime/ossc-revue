@@ -1,24 +1,5 @@
-# ossc-revue
+<p align="center">
+  <img src="./assets/banner.png" alt="Banner" height="240px">
+</p>
 
-## Project setup
-```
-pnpm install
-```
-
-### Compiles and hot-reloads for development
-```
-pnpm run serve
-```
-
-### Compiles and minifies for production
-```
-pnpm run build
-```
-
-### Lints and fixes files
-```
-pnpm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+This is a redesigned website to view your grades provided by the OSSC website.
