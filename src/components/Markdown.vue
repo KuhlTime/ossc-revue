@@ -24,7 +24,7 @@ export default {
   color: rgba(255, 255, 255, 0.9);
 
   /* https://github.com/vuejs/vue-loader/issues/749 */
-  /deep/ a {
+  ::v-deep a {
     /* Style */
     color: #2c8eff;
 
@@ -41,7 +41,7 @@ export default {
   }
 
   // TODO: Set Markdown in external SCSS file
-  /deep/ blockquote {
+  ::v-deep blockquote {
     border-left: 1px solid #fff;
     padding-left: 12px;
     margin-left: 1px;
