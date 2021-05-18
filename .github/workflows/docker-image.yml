@@ -6,7 +6,7 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [master]
+    branches: [main]
 
 # Required for secrets.GITHUB_TOKEN
 permissions:
