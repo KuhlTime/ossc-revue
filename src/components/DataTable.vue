@@ -142,6 +142,20 @@ tbody tr:nth-child(even) {
   background-color: rgba(0, 0, 0, 0.04);
 }
 
+/* Remove bottom border from last table row */
+tr:last-child td {
+  border: none;
+}
+
+/* Highlight table row */
+tr {
+  transition: all ease-in-out 120ms;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.08) !important;
+  }
+}
+
 th,
 td {
   padding: 10px 14px;
