@@ -1,0 +1,9 @@
+
+tasks:
+  - init: npm install && npm run serve
+
+
+
+vscode:
+  extensions:
+    - esbenp.prettier-vscode
