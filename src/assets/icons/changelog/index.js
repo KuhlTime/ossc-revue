@@ -15,6 +15,10 @@ const requireSVGs = require.context('.', false, /\.svg$/)
 
 let modules = {}
 
+/**
+ * Exports each Icon with the following format:
+ * <Filename>Icon
+ */
 requireSVGs.keys().forEach(fileName => {
   const svg = requireSVGs(fileName)
 
