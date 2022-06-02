@@ -21,7 +21,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="r in sortedRows" :key="r">
+        <tr v-for="(r, rI) in sortedRows" :key="rI">
           <td v-for="(h, i) in headers" :key="h">{{ r[i] }}</td>
         </tr>
       </tbody>
