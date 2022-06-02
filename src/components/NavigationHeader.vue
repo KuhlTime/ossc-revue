@@ -9,7 +9,10 @@
         <b>{{ titleBold }}</b>
         <span>{{ titleThin }}</span>
       </h1>
-      <a class="version" @click="$router.push({ name: 'changelog' })" v-if="$route.name === 'home'"
+      <a
+        class="version"
+        @click="$router.push({ name: 'changelog' })"
+        v-if="$route.name === 'home' || $route.name === 'login'"
         >Version: {{ version }}</a
       >
     </div>
